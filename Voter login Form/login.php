@@ -9,7 +9,7 @@
         $_SESSION['voterdata'] = $voter;
         echo'
         <script>
-         location="dashboard.php";
+         location="../Dashboard/dashboard.php";
         </script>
         ';
 

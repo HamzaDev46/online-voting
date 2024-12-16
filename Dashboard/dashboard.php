@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    $voterdata = $_SESSION['voterdata'];
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +27,9 @@
             color:whitesmoke;
             border-radius:7px;
             background:rgb(57, 159, 103);
+        }
+        #main-sec{
+            box-shadow:2px 2px 10px rgba(0,0,0,0.9);
         }
     </style>
 </head>
@@ -68,29 +79,29 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="w3-container">
-
-
-                    <div class="w3-card-4" style="width:100%">
-                        <header class="w3-container w3-light-grey">
-                        <h3>Voter Name</h3>
-                        </header>
-                        <div class="w3-container">
-                        <p>Voter Status</p>
-                        <hr>
-                        <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-                        <p>CEO at Mighty Schools. Marketing and Advertising.  </p><br>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card-header"><marquee style="color:red">You can only vote one candidate</marquee></div>
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="../VoterImg/<?php echo $voterdata['photo'] ?>" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="color:blue">Voter Detail</h5>
+                                            <p class="card-text">
+                                               <li>Name: <?php echo $voterdata['name'] ?></li>
+                                               <li>Mobile No: <?php echo $voterdata['mobile'] ?></li>
+                                               <li>Cnic No: <?php echo $voterdata['cnic'] ?></li>
+                                            </p>
+                                            <h5 class="card-title">Status</h5>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
-                        <button class="w3-button w3-block w3-dark-grey"></button>
-                    </div>
                 </div>
-
-
-
-
-
             </div>
             <div class="col-sm-8">
-                   <table class="table">
+                   <table class="table" id="main-sec">
                         <thead>
                             <tr>
                            
@@ -103,7 +114,6 @@
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
-                                <td>Otto</td>
                                 <td>@mdo</td>
                             </tr>
                            

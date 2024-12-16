@@ -1,4 +1,5 @@
 <?php 
+session_start();
     $conn = mysqli_connect('localhost', 'root', '', 'voterdatabase');
     $cnic = $_POST['cnic'];
     $email = $_POST['email'];
@@ -6,7 +7,7 @@
     $check = mysqli_query($conn, "SELECT * FROM voterregisteration WHERE  cnic = '$cnic' AND email = '$email' AND pass = '$pass' ");
     if(mysqli_num_rows($check)>0){
         $voterdata = mysqli_fetch_array($check);
-        $_SESSION['voterdata'] = $voter;
+        $_SESSION['voterdata'] = $voterdata;
         echo'
         <script>
          location="../Dashboard/dashboard.php";
@@ -21,5 +22,7 @@
 
     }
 
-
+  
 ?>
+
+

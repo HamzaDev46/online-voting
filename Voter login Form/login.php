@@ -1,5 +1,5 @@
 <?php 
-session_start();
+    session_start();
     $conn = mysqli_connect('localhost', 'root', '', 'voterdatabase');
     $cnic = $_POST['cnic'];
     $email = $_POST['email'];

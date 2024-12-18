@@ -26,7 +26,7 @@
         .nav-item a:hover{
             color:whitesmoke;
             border-radius:7px;
-            background:rgb(57, 159, 103);
+            background:rgb(54, 198, 119);
         }
         #main-sec{
             box-shadow:2px 2px 10px rgba(0,0,0,0.9);
@@ -36,9 +36,34 @@
 <body>
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0; width:100%" id="rightMenu">
         <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        <div class="container" style="padding-top:50px;">
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-5">
+                    <h2>Admin Login Form</h2>
+                    <p>Please Enter your Information to Proceed</p><hr /><br /><br />
+                            <form action="Admin login/Adminlogin.php" method="post">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-primary" type="submit">Login</button>
+                                        </div>           
+                             </form>
+                </div>
+            </div>
+        </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
@@ -93,7 +118,7 @@
                                                <li>Mobile No: <?php echo $voterdata['mobile'] ?></li>
                                                <li>Cnic No: <?php echo $voterdata['cnic'] ?></li>
                                             </p>
-                                            <h5 class="card-title">Status</h5>
+                                            <h5 class="card-title">Status <span style="color:green"> Not Voted</span></h5>
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,10 @@
 <?php
     session_start();
     $voterdata = $_SESSION['voterdata'];
+    $conn = mysqli_connect('localhost', 'root', '', 'voterdatabase');
+
+    $query = "SELECT * FROM addcandidate";
+    $result = mysqli_query($conn,$query);
 ?>
 
 
@@ -137,10 +141,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>@mdo</td>
-                            </tr>
+                               <?php
+                                while($row=mysqli_fetch_assoc($result))
+                                {
+                                ?>
+                                    <td>
+                                        <li>Candidate Name:<?php echo $row['cname']?></li>
+                                        <li>Party Name:<?php echo $row['cparty']?></li>
+                                        <li>Total Votes:</li><br>
+                                        <button class="btn btn-danger">Vote</button>
+                                    </td>
+                                    <td><img src="Admin login/images/<?php echo $row['symbol']?>" width="40%" style="border-radius:50%;"></td>
+                                    <td><img src="Admin login/images/<?php echo $row['photo']?>" width="70%" style="border-radius:10px;"></td>
+                                   
+                                     <?php
+                                }
+                                    ?>
+                                </tr>  
+                             
                            
                         </tbody>
                     </table>

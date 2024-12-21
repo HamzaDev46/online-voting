@@ -7,7 +7,7 @@ $check = mysqli_query($conn, "SELECT * FROM adminlogin WHERE name = '$name' AND 
 if (mysqli_num_rows($check) > 0) {
     echo '
     <script>
-        location = "AdminDashboard.php";
+        location = "AdminDasboard.php";
     </script>
     ';
 } else {
